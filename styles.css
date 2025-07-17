@@ -70,7 +70,7 @@ header {
 
 .main-image {
   box-shadow: var(--shadow);
-  max-width: 100%;
+  /* max-width: 100%; */
   height: auto;
 }
 
