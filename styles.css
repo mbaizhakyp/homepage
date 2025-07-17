@@ -1,58 +1,95 @@
-body {
-  margin: 0;
-  font-family: "Roboto", sans-serif;
+/* CSS Custom Properties */
+:root {
+  --primary-color: rgba(8, 145, 178, 255);
+  --text-dark: hsl(0 0 5%);
+  --text-medium: hsl(0 0 30%);
+  --text-light: hsl(0 0 95%);
+  --shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+  --spacing-large: 100px;
+  --spacing-medium: 50px;
+  --spacing-small: 20px;
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Roboto", sans-serif;
 }
 
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: var(--font-body);
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  color: var(--text-dark);
+}
+
+p {
+  color: var(--text-medium);
+}
+
+/* Utility Classes */
+.shadow {
+  box-shadow: var(--shadow);
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+
+.social-links a:hover {
+  transform: scale(1.1);
+}
+
+/* Header Styles */
 header {
   display: flex;
-  background-color: rgba(8, 145, 178, 255);
+  background-color: var(--primary-color);
+}
+
+.main-image-div {
+  margin: auto 0 auto var(--spacing-large);
+}
+
+.main-image {
+  box-shadow: var(--shadow);
 }
 
 .about-me {
   background-color: white;
-  margin: 130px 100px 130px 0;
+  margin: 130px var(--spacing-large) 130px 0;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-evenly; */
   padding: 40px;
   font-size: 16px;
   line-height: 1.5;
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow);
 }
 
-.main-image-div {
-  margin: auto 0 auto 100px;
-}
-.main-image {
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-h1,
-h2,
-h3 {
-  font-family: "Playfair Display", serif;
-  color: hsl(0 0 5%);
-}
-p {
-  color: hsl(0 0 30%);
-}
-
-.links {
-  display: flex;
+header .social-links {
   justify-content: flex-end;
-  gap: 15px;
 }
-header .links i {
+
+header .social-links i {
   font-size: 30px;
   color: black;
 }
-/* Break */
 
-.project {
-  /* border: 2px solid black; */
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
-  max-width: 350px;
+/* Main Content Styles */
+main {
+  padding: var(--spacing-medium) var(--spacing-large);
+  background-color: white;
 }
+
 .projects {
   display: flex;
   gap: 70px;
@@ -60,48 +97,73 @@ header .links i {
   flex-wrap: wrap;
 }
 
-main {
-  padding: 50px 100px;
-  background-color: white;
+.project {
+  box-shadow: var(--shadow);
+  max-width: 350px;
 }
 
-footer {
-  display: flex;
-  justify-content: center;
-  padding: 100px;
-  background-color: rgba(8, 145, 178, 255);
+.project-info {
+  padding: 0 var(--spacing-small);
 }
-.info {
-  color: white;
-  font-size: 18px;
-}
-.info .links {
-  justify-content: flex-start;
-  gap: 30px;
-  margin-top: 40px;
-}
-.info .links i {
-  font-size: 40px;
-  color: black;
-}
-.info p i {
-  color: white;
-}
-footer img {
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
-}
-.info p,
-.info h1 {
-  color: hsl(0 0 95%);
-}
+
 .project-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.project-info {
-  padding: 0 20px;
+
+.project-links {
+  display: flex;
+  gap: 10px;
 }
+
+.project-links a {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+
+.project-links a:hover {
+  transform: scale(1.1);
+}
+
 .project-header i {
   font-size: 30px;
+}
+
+/* Footer Styles */
+footer {
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing-large);
+  background-color: var(--primary-color);
+}
+
+.contact-info {
+  color: white;
+  font-size: 18px;
+}
+
+.contact-info .social-links {
+  justify-content: flex-start;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.contact-info .social-links i {
+  font-size: 40px;
+  color: black;
+}
+
+.contact-info p i {
+  color: white;
+}
+
+footer img {
+  box-shadow: var(--shadow);
+}
+
+.contact-info p,
+.contact-info h2 {
+  color: var(--text-light);
 }
