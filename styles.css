@@ -12,6 +12,14 @@
   --font-body: "Roboto", sans-serif;
 }
 
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+  :root {
+    --spacing-large: 20px;
+    --spacing-medium: 30px;
+  }
+}
+
 /* Base Styles */
 body {
   margin: 0;
@@ -62,6 +70,8 @@ header {
 
 .main-image {
   box-shadow: var(--shadow);
+  max-width: 100%;
+  height: auto;
 }
 
 .about-me {
@@ -84,6 +94,36 @@ header .social-links i {
   color: black;
 }
 
+/* Header Responsive */
+@media (max-width: 1024px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-image-div {
+    margin: var(--spacing-medium) 0 0 0;
+  }
+
+  .about-me {
+    margin: var(--spacing-medium) var(--spacing-large) var(--spacing-medium)
+      var(--spacing-large);
+    max-width: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-image-div img {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .about-me {
+    margin: var(--spacing-medium) var(--spacing-large);
+    padding: var(--spacing-medium);
+  }
+}
+
 /* Main Content Styles */
 main {
   padding: var(--spacing-medium) var(--spacing-large);
@@ -99,6 +139,14 @@ main {
 
 .project {
   box-shadow: var(--shadow);
+  max-width: 350px;
+  flex: 1;
+  min-width: 300px;
+}
+
+.project img {
+  width: 100%;
+  height: auto;
   max-width: 350px;
 }
 
@@ -131,12 +179,38 @@ main {
   font-size: 30px;
 }
 
+/* Main Content Responsive */
+@media (max-width: 1024px) {
+  .projects {
+    gap: 40px;
+    justify-content: center;
+  }
+
+  .project {
+    min-width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects {
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project {
+    max-width: 100%;
+    min-width: auto;
+  }
+}
+
 /* Footer Styles */
 footer {
   display: flex;
   justify-content: center;
   padding: var(--spacing-large);
   background-color: var(--primary-color);
+  gap: var(--spacing-large);
 }
 
 .contact-info {
@@ -161,9 +235,39 @@ footer {
 
 footer img {
   box-shadow: var(--shadow);
+  max-width: 100%;
+  height: auto;
 }
 
 .contact-info p,
 .contact-info h2 {
   color: var(--text-light);
+}
+
+/* Footer Responsive */
+@media (max-width: 1024px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-info .social-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: var(--spacing-medium) var(--spacing-large);
+  }
+
+  footer img {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .contact-info {
+    font-size: 16px;
+  }
 }
